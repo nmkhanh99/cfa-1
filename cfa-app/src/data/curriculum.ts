@@ -29,8 +29,9 @@ export interface Volume {
   topics: Topic[];
 }
 
-/** LM1 — Rates and Returns: section đúng heading sách. */
+/** LM1 — Rates and Returns: section đúng heading & thứ tự sách. */
 const LM1_SECTIONS: Section[] = [
+  { id: "intro", title: "Introduction" },
   { id: "interest-rates", title: "Interest Rates and Time Value of Money" },
   { id: "rates-of-return", title: "Rates of Return" },
   { id: "mwr-twr", title: "Money-Weighted and Time-Weighted Return" },
@@ -71,10 +72,27 @@ const ECONOMICS: Topic = {
   ],
 };
 
+/**
+ * Phần ôn nền (Prerequisite Quant) — là tài liệu BỔ TRỢ của Volume L1V1,
+ * nên nằm trong menu L1V1, không tách Volume riêng (theo rule curriculum-ordered-development).
+ */
+const PREREQUISITE: Topic = {
+  id: "prerequisite",
+  name: "Prerequisite — Ôn nền (Quant)",
+  modules: [
+    { id: 1, title: "Interest Rates, Present Value, and Future Value", status: "planned", sections: [] },
+    { id: 2, title: "Organizing, Visualizing, and Describing Data", status: "planned", sections: [] },
+    { id: 3, title: "Probability Concepts", status: "planned", sections: [] },
+    { id: 4, title: "Common Probability Distributions", status: "planned", sections: [] },
+    { id: 5, title: "Sampling and Estimation", status: "planned", sections: [] },
+    { id: 6, title: "Basics of Hypothesis Testing", status: "planned", sections: [] },
+  ],
+};
+
 export const L1V1: Volume = {
   id: "L1V1",
   name: "2024 CFA Level I — Volume 1 (L1V1)",
-  topics: [QUANT, ECONOMICS],
+  topics: [QUANT, ECONOMICS, PREREQUISITE],
 };
 
 export const VOLUMES: Volume[] = [L1V1];

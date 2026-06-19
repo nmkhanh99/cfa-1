@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import {
+  interestRateFromComponents,
   holdingPeriodReturn,
   linkReturns,
   arithmeticMean,
@@ -22,6 +23,18 @@ import {
  */
 
 const near = (a: number, b: number, tol = 5e-4) => expect(Math.abs(a - b)).toBeLessThan(tol);
+
+describe("interestRateFromComponents", () => {
+  it("real risk-free + inflation + default + liquidity + maturity premiums", () => {
+    near(
+      interestRateFromComponents({ realRiskFree: 0.005, inflation: 0.02, defaultRisk: 0.02, liquidity: 0.005, maturity: 0.01 }),
+      0.06
+    );
+  });
+  it("chỉ real risk-free + inflation", () => {
+    near(interestRateFromComponents({ realRiskFree: 0.005, inflation: 0.02 }), 0.025);
+  });
+});
 
 describe("holdingPeriodReturn", () => {
   it("Example 2: mua 3450, bán 3050, cổ tức 51.55 → -10.1%", () => {

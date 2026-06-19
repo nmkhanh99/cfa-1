@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {
+  interestRateFromComponents,
   holdingPeriodReturn,
   linkReturns,
   arithmeticMean,
@@ -15,6 +16,7 @@ import {
   leveragedReturn,
 } from "../lib/quant/returns";
 import { pct, num } from "../lib/format";
+import type { Section } from "../data/curriculum";
 
 /** Parse danh sách số ngăn cách bởi dấu phẩy / khoảng trắng / xuống dòng. */
 function parseNums(s: string): number[] {
@@ -56,7 +58,27 @@ function SectionHeader({ n, title }: { n: number; title: string }) {
   );
 }
 
-export default function ReturnAnalyzer() {
+const safe = <T,>(fn: () => T): T | null => {
+  try {
+    return fn();
+  } catch {
+    return null;
+  }
+};
+
+/**
+ * Công cụ LM1 — Rates and Returns.
+ * Section được render theo đúng `sections` khai báo trong curriculum.ts
+ * (nguồn cấu trúc duy nhất) — không hardcode tiêu đề/số thứ tự.
+ */
+export default function ReturnAnalyzer({ sections }: { sections: Section[] }) {
+  // Interest Rates and Time Value of Money
+  const [rrf, setRrf] = useState("0.005");
+  const [infl, setInfl] = useState("0.02");
+  const [def, setDef] = useState("0.02");
+  const [liq, setLiq] = useState("0.005");
+  const [mat, setMat] = useState("0.01");
+
   // Rates of Return
   const [p0, setP0] = useState("3450");
   const [p1, setP1] = useState("3050");
@@ -85,27 +107,45 @@ export default function ReturnAnalyzer() {
   const [debt, setDebt] = useState("3");
   const [equity, setEquity] = useState("7");
 
-  const safe = <T,>(fn: () => T): T | null => {
-    try {
-      return fn();
-    } catch {
-      return null;
-    }
-  };
-
   const ret = parseNums(series);
   const priceArr = parseNums(prices);
   const cfArr = parseNums(cfs);
   const subArr = parseNums(subHpr);
 
-  return (
-    <div className="max-w-3xl">
-      <p className="text-sm text-slate-500">
-        Công cụ phân tích lợi suất danh mục — mỗi mục dưới đây ứng đúng heading trong sách (LM1).
-      </p>
-
-      {/* 2. Rates of Return */}
-      <SectionHeader n={2} title="Rates of Return" />
+  // Tool theo từng section id (khớp curriculum.ts). Section không có tool → bỏ qua.
+  const toolsBySection: Record<string, React.ReactNode> = {
+    "interest-rates": (
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Tool
+          title="Interest Rate Builder"
+          los="LOS: interest rate = real risk-free rate + các premium"
+        >
+          <label className="block text-xs text-slate-500">Real risk-free rate</label>
+          <input className={inputCls} value={rrf} onChange={(e) => setRrf(e.target.value)} />
+          <label className="block text-xs text-slate-500">Inflation premium</label>
+          <input className={inputCls} value={infl} onChange={(e) => setInfl(e.target.value)} />
+          <label className="block text-xs text-slate-500">Default risk premium</label>
+          <input className={inputCls} value={def} onChange={(e) => setDef(e.target.value)} />
+          <label className="block text-xs text-slate-500">Liquidity premium</label>
+          <input className={inputCls} value={liq} onChange={(e) => setLiq(e.target.value)} />
+          <label className="block text-xs text-slate-500">Maturity premium</label>
+          <input className={inputCls} value={mat} onChange={(e) => setMat(e.target.value)} />
+          <Row
+            label="Required interest rate"
+            value={pct(
+              interestRateFromComponents({
+                realRiskFree: +rrf,
+                inflation: +infl,
+                defaultRisk: +def,
+                liquidity: +liq,
+                maturity: +mat,
+              })
+            )}
+          />
+        </Tool>
+      </div>
+    ),
+    "rates-of-return": (
       <div className="grid gap-4 sm:grid-cols-2">
         <Tool title="Holding Period Return" los="LOS: calculate major return measures">
           <label className="block text-xs text-slate-500">Giá đầu (P₀)</label>
@@ -117,7 +157,7 @@ export default function ReturnAnalyzer() {
           <Row label="HPR" value={pct(holdingPeriodReturn(+p0, +p1, +income))} />
         </Tool>
 
-        <Tool title="Mean Returns (Arithmetic / Geometric)" los="so sánh single-period vs multi-period">
+        <Tool title="Mean Returns (Arithmetic / Geometric)" los="single-period vs multi-period">
           <label className="block text-xs text-slate-500">Chuỗi return (vd 0.15, -0.05, …)</label>
           <textarea className={inputCls} rows={2} value={series} onChange={(e) => setSeries(e.target.value)} />
           <Row label="Arithmetic mean" value={ret.length ? pct(arithmeticMean(ret)) : "—"} />
@@ -132,9 +172,8 @@ export default function ReturnAnalyzer() {
           <Row label="Arithmetic mean (so sánh)" value={priceArr.length ? num(arithmeticMean(priceArr)) : "—"} />
         </Tool>
       </div>
-
-      {/* 3. Money-Weighted and Time-Weighted Return */}
-      <SectionHeader n={3} title="Money-Weighted and Time-Weighted Return" />
+    ),
+    "mwr-twr": (
       <div className="grid gap-4 sm:grid-cols-2">
         <Tool title="Money-Weighted Return (IRR)" los="LOS: compare MWR & TWR">
           <label className="block text-xs text-slate-500">Dòng tiền theo kỳ t=0,1,2,… (âm = chi ra)</label>
@@ -148,14 +187,13 @@ export default function ReturnAnalyzer() {
           <Row label="TWR (linked)" value={subArr.length ? pct(timeWeightedReturn(subArr)) : "—"} />
         </Tool>
       </div>
-
-      {/* 4. Annualized Return */}
-      <SectionHeader n={4} title="Annualized Return" />
+    ),
+    annualized: (
       <div className="grid gap-4 sm:grid-cols-2">
         <Tool title="Annualize theo số kỳ/năm" los="LOS: annualized return measures">
           <label className="block text-xs text-slate-500">Return của kỳ</label>
           <input className={inputCls} value={periodRet} onChange={(e) => setPeriodRet(e.target.value)} />
-          <label className="block text-xs text-slate-500">Số kỳ trong năm (vd 4, 52, 2/3 → nhập 0.6667)</label>
+          <label className="block text-xs text-slate-500">Số kỳ trong năm (vd 4, 52, 2/3 → 0.6667)</label>
           <input className={inputCls} value={periodsPerYear} onChange={(e) => setPeriodsPerYear(e.target.value)} />
           <Row label="Annualized" value={pct(annualize(+periodRet, +periodsPerYear))} />
         </Tool>
@@ -174,9 +212,8 @@ export default function ReturnAnalyzer() {
           <Row label="Continuously compounded" value={pct(continuouslyCompounded(+ccHpr))} />
         </Tool>
       </div>
-
-      {/* 5. Other Major Return Measures */}
-      <SectionHeader n={5} title="Other Major Return Measures and Their Applications" />
+    ),
+    "other-measures": (
       <div className="grid gap-4 sm:grid-cols-2">
         <Tool title="Real Return" los="(1+nominal)/(1+inflation) − 1">
           <label className="block text-xs text-slate-500">Nominal return</label>
@@ -206,6 +243,24 @@ export default function ReturnAnalyzer() {
           <Row label="Leveraged return" value={safe(() => leveragedReturn(+rp, +rd, +debt, +equity)) !== null ? pct(leveragedReturn(+rp, +rd, +debt, +equity)) : "—"} />
         </Tool>
       </div>
+    ),
+  };
+
+  return (
+    <div className="max-w-3xl">
+      <p className="text-sm text-slate-500">
+        Công cụ phân tích lợi suất danh mục — section & thứ tự lấy đúng từ mục lục sách (LM1).
+      </p>
+      {sections.map((s, i) => {
+        const tools = toolsBySection[s.id];
+        if (!tools) return null; // section lý thuyết (vd Introduction) → xem ở sách
+        return (
+          <div key={s.id}>
+            <SectionHeader n={i + 1} title={s.title} />
+            {tools}
+          </div>
+        );
+      })}
     </div>
   );
 }

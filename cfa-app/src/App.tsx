@@ -83,8 +83,8 @@ export default function App() {
             )}
 
             <div className="mt-6">
-              {activeModule.status === "available" && activeModule.id === 1 ? (
-                <ReturnAnalyzer />
+              {activeTopic?.id === "quant" && activeModule.id === 1 ? (
+                <ReturnAnalyzer sections={activeModule.sections} />
               ) : (
                 <div className="rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center text-slate-500">
                   Ứng dụng cho module này sẽ được dựng theo đúng thứ tự tài liệu.

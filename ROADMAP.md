@@ -4,8 +4,9 @@ Theo PLAN.md (v2) — application-first, đúng thứ tự sách, làm Quant (L1
 
 ## Done
 - P0 — Scaffold app + engine test harness (Vite/React/TS/Tailwind/Vitest).
-- P1 — Slice 1: **Portfolio Return Analyzer (LM1 — Rates and Returns)**: engine + UI + 32 test đối chiếu sách.
+- P1 — Slice 1: **Portfolio Return Analyzer (LM1 — Rates and Returns)**: engine + UI + 34 test đối chiếu sách.
 - Menu điều hướng theo cấu trúc sách (Volume L1V1 → Topic → Module → Section).
+- Tuân thủ rule Curriculum-Ordered Development: section render theo `curriculum.ts`, thêm tool section "Interest Rates", thêm nhóm Prerequisite trong L1V1.
 - 4 tài liệu dự án khởi tạo.
 
 ## In Progress

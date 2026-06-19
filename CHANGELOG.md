@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## 2026-06-20 (b) — Tuân thủ rule Curriculum-Ordered Development
+
+### Added
+- Section "Interest Rates and Time Value of Money" trong LM1 có công cụ **Interest Rate Builder** (lãi suất = real risk-free + các premium) + 2 test.
+- Thêm "Introduction" vào mục lục LM1 (đúng heading sách).
+- Menu L1V1 thêm nhóm **Prerequisite — Ôn nền (Quant)** gồm 6 module (planned), đúng tinh thần "prerequisite là bổ trợ của Volume, không tách riêng".
+
+### Changed
+- `ReturnAnalyzer` render section **theo `curriculum.ts`** (id/tiêu đề/số thứ tự tự động), bỏ hardcode → hết lệch số thứ tự với mục lục.
+
+### Fixed
+- Guard hiển thị ReturnAnalyzer theo đúng topic (quant) + module 1, tránh nhầm với module trùng id ở topic khác.
+
+### Technical
+- Thêm `interestRateFromComponents` vào engine; test tăng lên 34, pass.
+
 ## 2026-06-20
 
 ### Added

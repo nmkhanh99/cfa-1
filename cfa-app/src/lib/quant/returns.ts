@@ -3,6 +3,21 @@
  * Mọi hàm được kiểm thử đối chiếu ví dụ/đáp án trong 2024 L1V1.pdf (xem returns.test.ts).
  */
 
+/**
+ * Lãi suất (required rate of return) = real risk-free rate + tổng các premium.
+ * Theo "Determinants of Interest Rates": inflation, default, liquidity, maturity premium.
+ */
+export function interestRateFromComponents(parts: {
+  realRiskFree: number;
+  inflation?: number;
+  defaultRisk?: number;
+  liquidity?: number;
+  maturity?: number;
+}): number {
+  const { realRiskFree, inflation = 0, defaultRisk = 0, liquidity = 0, maturity = 0 } = parts;
+  return realRiskFree + inflation + defaultRisk + liquidity + maturity;
+}
+
 /** Holding period return: R = (P1 - P0 + I1) / P0 */
 export function holdingPeriodReturn(p0: number, p1: number, income = 0): number {
   if (p0 === 0) throw new Error("P0 không được bằng 0");
