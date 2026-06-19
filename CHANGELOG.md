@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-06-20 (f) — P3: LM3 Statistical Measures of Asset Returns
+
+### Added
+- Engine `lib/quant/stats.ts`: mean, median, mode, range, MAD, sample variance/std, target semideviation, CV, skewness, excess kurtosis, covariance, correlation — 20 test đối chiếu Example LM3 (gồm Anscombe Quartet corr ≈ 0.82).
+- Ứng dụng **Return Distribution Lab** (LM3), công cụ nhóm theo đúng heading sách + đầy đủ ghi chú/hướng dẫn/trỏ mục.
+- Section LM3 trong `curriculum.ts` (đúng mục lục); bật LM3 sang "available".
+
 ## 2026-06-20 (e) — P2: LM2 The Time Value of Money in Finance
 
 ### Added

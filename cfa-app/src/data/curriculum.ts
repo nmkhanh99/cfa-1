@@ -47,13 +47,22 @@ const LM2_SECTIONS: Section[] = [
   { id: "cash-flow-additivity", title: "Cash Flow Additivity" },
 ];
 
+/** LM3 — Statistical Measures of Asset Returns: section đúng heading & thứ tự sách. */
+const LM3_SECTIONS: Section[] = [
+  { id: "intro", title: "Introduction" },
+  { id: "central-location", title: "Measures of Central Tendency and Location" },
+  { id: "dispersion", title: "Measures of Dispersion" },
+  { id: "shape", title: "Measures of Shape of a Distribution" },
+  { id: "correlation", title: "Correlation between Two Variables" },
+];
+
 const QUANT: Topic = {
   id: "quant",
   name: "Quantitative Methods",
   modules: [
     { id: 1, title: "Rates and Returns", app: "Portfolio Return Analyzer", status: "available", sections: LM1_SECTIONS },
     { id: 2, title: "The Time Value of Money in Finance", app: "Valuation & No-Arbitrage Workbench", status: "available", sections: LM2_SECTIONS },
-    { id: 3, title: "Statistical Measures of Asset Returns", app: "Return Distribution Lab", status: "planned", sections: [] },
+    { id: 3, title: "Statistical Measures of Asset Returns", app: "Return Distribution Lab", status: "available", sections: LM3_SECTIONS },
     { id: 4, title: "Probability Trees and Conditional Expectations in Investment Applications", app: "Scenario & Bayes Decision Tree", status: "planned", sections: [] },
     { id: 5, title: "Portfolio Mathematics", app: "Portfolio Risk Builder", status: "planned", sections: [] },
     { id: 6, title: "Simulation Methods", app: "Monte Carlo & Bootstrap Simulator", status: "planned", sections: [] },

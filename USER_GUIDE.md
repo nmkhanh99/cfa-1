@@ -37,6 +37,13 @@ Cách dùng: nhập số vào ô (chuỗi return cách nhau bởi dấu phẩy),
 - **Implied Return and Growth:** suy lợi suất ẩn của trái phiếu; required return & implied growth của cổ phiếu.
 - **Cash Flow Additivity:** PV chuỗi dòng tiền, implied forward rate, forward FX (no-arbitrage), định giá option nhị thức 1 kỳ (call/put).
 
+## Return Distribution Lab (LM3)
+Phân tích phân phối lợi suất, nhóm đúng mục sách:
+- **Measures of Central Tendency and Location:** mean, median, mode.
+- **Measures of Dispersion:** range, MAD, variance, std, CV, target downside deviation.
+- **Measures of Shape of a Distribution:** skewness, excess kurtosis.
+- **Correlation between Two Variables:** covariance, correlation (2 chuỗi X, Y).
+
 ## Giải thích nhanh thuật ngữ
 - **HPR:** lợi suất nắm giữ một kỳ = (giá cuối − giá đầu + thu nhập)/giá đầu.
 - **Arithmetic vs Geometric mean:** trung bình cộng dùng cho ước tính 1 kỳ; trung bình nhân phản ánh tăng trưởng kép nhiều kỳ.
