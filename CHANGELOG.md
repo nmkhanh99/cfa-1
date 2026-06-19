@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 2026-06-20 (d) — Nâng LM1 theo rule in-app-guidance
+
+### Added
+- Mỗi công cụ trong Portfolio Return Analyzer (LM1) có: ghi chú giải thích (tính gì + liên hệ thực tế), khối "Cách dùng" các bước, và dòng 📖 trỏ đúng mục sách (Module · Section · Example, đã đối chiếu PDF).
+- Banner nhắc dữ liệu mẫu là ví dụ trong sách + quy ước nhập số thập phân.
+
+### Changed
+- Tách component `Field` dùng chung; chuẩn hóa trình bày ghi chú/hướng dẫn cho mọi công cụ.
+
 ## 2026-06-20 (c) — Thêm rule phát triển
 
 ### Technical

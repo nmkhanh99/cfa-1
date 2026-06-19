@@ -25,6 +25,12 @@ Các công cụ được nhóm đúng theo mục trong sách:
 
 Cách dùng: nhập số vào ô (chuỗi return cách nhau bởi dấu phẩy), kết quả hiện ngay bên dưới mỗi công cụ.
 
+**Mỗi công cụ đều có sẵn ngay trên app:**
+- **Ghi chú (ô vàng):** giải thích công cụ tính gì và liên hệ thực tế.
+- **Cách dùng:** các bước thực hiện đầy đủ (nhập gì, định dạng, đọc kết quả ở đâu).
+- **📖 Trỏ mục sách:** vị trí trong sách (Volume · Module · Section · Example) để tra cứu sâu hơn.
+- Số nhập ở dạng thập phân (0.15 = 15%). Ô điền sẵn là ví dụ lấy từ sách để đối chiếu đáp án.
+
 ## Giải thích nhanh thuật ngữ
 - **HPR:** lợi suất nắm giữ một kỳ = (giá cuối − giá đầu + thu nhập)/giá đầu.
 - **Arithmetic vs Geometric mean:** trung bình cộng dùng cho ước tính 1 kỳ; trung bình nhân phản ánh tăng trưởng kép nhiều kỳ.
