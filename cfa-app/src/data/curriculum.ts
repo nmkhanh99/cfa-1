@@ -95,6 +95,13 @@ const LM8_SECTIONS: Section[] = [
   { id: "parametric-nonparametric", title: "Parametric versus Nonparametric Tests" },
 ];
 
+/** LM9 — Parametric and Non-Parametric Tests of Independence: section đúng heading & thứ tự sách. */
+const LM9_SECTIONS: Section[] = [
+  { id: "intro", title: "Introduction" },
+  { id: "correlation-tests", title: "Tests Concerning Correlation" },
+  { id: "contingency", title: "Tests of Independence Using Contingency Table Data" },
+];
+
 const QUANT: Topic = {
   id: "quant",
   name: "Quantitative Methods",
@@ -107,7 +114,7 @@ const QUANT: Topic = {
     { id: 6, title: "Simulation Methods", app: "Monte Carlo & Bootstrap Simulator", status: "available", sections: LM6_SECTIONS },
     { id: 7, title: "Estimation and Inference", app: "Sampling & Confidence Interval Studio", status: "available", sections: LM7_SECTIONS },
     { id: 8, title: "Hypothesis Testing for Finance", app: "Hypothesis Test Runner", status: "available", sections: LM8_SECTIONS },
-    { id: 9, title: "Parametric and Non-Parametric Tests of Independence", app: "Independence Tester", status: "planned", sections: [] },
+    { id: 9, title: "Parametric and Non-Parametric Tests of Independence", app: "Independence Tester", status: "available", sections: LM9_SECTIONS },
     { id: 10, title: "Simple Linear Regression", app: "Regression Workbench", status: "planned", sections: [] },
     { id: 11, title: "Introduction to Big Data Techniques", app: "Fintech / Big Data Concepts", status: "planned", sections: [] },
   ],

@@ -68,6 +68,11 @@ Kiểm định giả thuyết, nhóm đúng mục sách:
 - **Tests of Return and Risk in Finance:** t-test một trung bình, χ²-test một phương sai, t-test 2 mẫu độc lập (pooled), paired t-test, F-test 2 phương sai.
 - (*Parametric vs Nonparametric* là phần lý thuyết — xem trong sách.)
 
+## Independence Tester (LM9)
+Kiểm định độc lập, nhóm đúng mục sách:
+- **Tests Concerning Correlation:** parametric correlation t-test; Spearman rank correlation (phi tham số) + t-test.
+- **Tests of Independence Using Contingency Table Data:** chi-square test độc lập cho dữ liệu phân loại.
+
 ## Giải thích nhanh thuật ngữ
 - **HPR:** lợi suất nắm giữ một kỳ = (giá cuối − giá đầu + thu nhập)/giá đầu.
 - **Arithmetic vs Geometric mean:** trung bình cộng dùng cho ước tính 1 kỳ; trung bình nhân phản ánh tăng trưởng kép nhiều kỳ.

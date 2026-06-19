@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-06-20 (l) — P9: LM9 Parametric and Non-Parametric Tests of Independence
+
+### Added
+- Engine `lib/quant/independence.ts`: correlation t-test (parametric), Spearman rank correlation (xếp hạng + xử lý ties), chi-square test độc lập trên bảng contingency (tự tính tần số kỳ vọng) — 12 test đối chiếu Example LM9 (t=2.656, rs=−0.204, χ²=32.08).
+- Ứng dụng **Independence Tester** (LM9): parametric correlation t-test, Spearman, chi-square contingency.
+- Section LM9 trong `curriculum.ts` (đúng mục lục); bật LM9 sang "available".
+
 ## 2026-06-20 (k) — P8: LM8 Hypothesis Testing for Finance
 
 ### Added
