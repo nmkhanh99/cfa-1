@@ -1,5 +1,27 @@
 # CHANGELOG
 
+## 2026-06-20 (p) — Khung học chung Phần 2: UI (tiến độ, dashboard, flashcards)
+
+### Added
+- `features/ProgressNotes.tsx`: đánh dấu section đã học + ghi chú cá nhân từng section (lưu local).
+- `features/Dashboard.tsx`: % tiến độ theo module/topic, số flashcard đến hạn, export/import JSON.
+- `features/Flashcards.tsx`: màn ôn flashcard theo SRS (Again/Hard/Good/Easy → cập nhật lịch).
+- `lib/progress.ts`: thống kê tiến độ thuần (module/topic) + đếm thẻ đến hạn — 6 test.
+- `data/flashcards.ts`: bộ flashcard công thức chủ chốt LM1–LM11.
+
+### Changed
+- `App.tsx`: thêm state dữ liệu + lưu local; điều hướng 3 chế độ (Học / Dashboard / Flashcards); tách `ModuleApp`.
+
+## 2026-06-20 (o) — Khung học chung Phần 1: SRS + store
+
+### Added
+- `lib/srs.ts`: thuật toán SM-2 (initCard/reviewCard/isDue), nhận `now` để test tất định.
+- `lib/store.ts`: AppData có `schemaVersion`, reducers immutable, serialize/deserialize có migration, export/import, binding localStorage.
+- 16 test (chuỗi SM-2, EF floor, round-trip, từ chối JSON hỏng/version mới/quality NaN).
+
+### Technical
+- Quyết định: dùng localStorage (đồng bộ, đủ cho 1 thiết bị) thay IndexedDB; có abstraction store để đổi sau.
+
 ## 2026-06-20 (n) — P11: LM11 Introduction to Big Data Techniques (hoàn tất Quant)
 
 ### Added

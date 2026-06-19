@@ -87,6 +87,12 @@ Big Data / AI-ML / NLP (module khái niệm — demo thuật toán minh hoạ):
 - **Tackling Big Data with Data Science:** feature scaling (min-max, z-score); text analytics & NLP (tần suất từ, điểm cảm xúc).
 - (*Fintech / Big Data* là phần lý thuyết — xem trong sách.)
 
+## Khung học chung (tiến độ, ghi chú, flashcard)
+- **Tiến độ & Ghi chú:** trong mỗi module có khối "Tiến độ & Ghi chú" — tick section đã học và ghi chú; lưu tự động trong trình duyệt.
+- **📊 Dashboard** (menu trái): xem % section đã học theo từng module/topic và số flashcard đến hạn; **Export/Import JSON** để sao lưu hoặc chuyển máy.
+- **🗂️ Flashcards** (menu trái): ôn thẻ công thức theo spaced repetition (SM-2). Bấm "Hiện đáp án" rồi tự đánh giá Quên/Khó/Được/Dễ — app tự lên lịch ôn lại.
+- **Lưu trữ:** dữ liệu nằm trong trình duyệt (localStorage). Xoá dữ liệu trình duyệt sẽ mất tiến độ → nên Export định kỳ.
+
 ## Giải thích nhanh thuật ngữ
 - **HPR:** lợi suất nắm giữ một kỳ = (giá cuối − giá đầu + thu nhập)/giá đầu.
 - **Arithmetic vs Geometric mean:** trung bình cộng dùng cho ước tính 1 kỳ; trung bình nhân phản ánh tăng trưởng kép nhiều kỳ.

@@ -23,9 +23,11 @@ Theo PLAN.md (v2) — application-first, đúng thứ tự sách, làm Quant (L1
 ## In Progress
 - (trống)
 
+- ✅ **Khung học chung**: SRS (SM-2) + store có version + tiến độ theo section + ghi chú + dashboard + flashcards + export/import (localStorage). 206 test pass.
+
 ## Next
-- Khung học chung: tiến độ theo LOS, flashcard SRS (SM-2), dashboard, export/import JSON có version (IndexedDB).
 - Pipeline bóc nội dung reader/quiz từ PDF (hỗ trợ, làm dần theo từng module).
+- Tiến độ chi tiết tới từng LOS (hiện đang theo section).
 
 ## Later
 - Mở rộng sang các Topic/Volume khác (Economics ở L1V1; rồi FSA, Equity, Fixed Income, ...).

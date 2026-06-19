@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { VOLUMES, type Module } from "./data/curriculum";
+import { VOLUMES, type Module, type Section } from "./data/curriculum";
+import { loadData, saveData, setProgress, setNote, upsertCard, type AppData } from "./lib/store";
+import type { SrsCard } from "./lib/srs";
 import ReturnAnalyzer from "./apps/ReturnAnalyzer";
 import ValuationWorkbench from "./apps/ValuationWorkbench";
 import DistributionLab from "./apps/DistributionLab";
@@ -11,37 +13,93 @@ import HypothesisTestRunner from "./apps/HypothesisTestRunner";
 import IndependenceTester from "./apps/IndependenceTester";
 import RegressionWorkbench from "./apps/RegressionWorkbench";
 import BigDataLab from "./apps/BigDataLab";
+import ProgressNotes from "./features/ProgressNotes";
+import Dashboard from "./features/Dashboard";
+import Flashcards from "./features/Flashcards";
+
+type View = "study" | "dashboard" | "flashcards";
+
+/** App của module Quant: render đúng ứng dụng theo id (chỉ topic quant). */
+function ModuleApp({ topicId, module }: { topicId: string; module: Module }) {
+  const sections: Section[] = module.sections;
+  if (topicId !== "quant")
+    return <Placeholder />;
+  switch (module.id) {
+    case 1: return <ReturnAnalyzer sections={sections} />;
+    case 2: return <ValuationWorkbench sections={sections} />;
+    case 3: return <DistributionLab sections={sections} />;
+    case 4: return <DecisionTree sections={sections} />;
+    case 5: return <PortfolioRiskBuilder sections={sections} />;
+    case 6: return <MonteCarloSimulator sections={sections} />;
+    case 7: return <SamplingStudio sections={sections} />;
+    case 8: return <HypothesisTestRunner sections={sections} />;
+    case 9: return <IndependenceTester sections={sections} />;
+    case 10: return <RegressionWorkbench sections={sections} />;
+    case 11: return <BigDataLab sections={sections} />;
+    default: return <Placeholder />;
+  }
+}
+
+function Placeholder() {
+  return (
+    <div className="rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center text-slate-500">
+      Ứng dụng cho module này sẽ được dựng theo đúng thứ tự tài liệu.
+    </div>
+  );
+}
 
 export default function App() {
   const volume = VOLUMES[0]; // đang dựng L1V1 — menu tách riêng
-  const [selected, setSelected] = useState<{ topic: string; module: number } | null>({
-    topic: "quant",
-    module: 1,
-  });
+  const [data, setData] = useState<AppData>(() => loadData());
+  const [view, setView] = useState<View>("study");
+  const [selected, setSelected] = useState<{ topic: string; module: number }>({ topic: "quant", module: 1 });
 
-  const activeTopic = volume.topics.find((t) => t.id === selected?.topic);
-  const activeModule: Module | undefined = activeTopic?.modules.find((m) => m.id === selected?.module);
+  const now = Date.now();
+  const activeTopic = volume.topics.find((t) => t.id === selected.topic);
+  const activeModule = activeTopic?.modules.find((m) => m.id === selected.module);
+
+  // Cập nhật + lưu local.
+  const update = (fn: (d: AppData) => AppData) =>
+    setData((prev) => {
+      const next = fn(prev);
+      saveData(next);
+      return next;
+    });
+  const replaceData = (d: AppData) => {
+    saveData(d);
+    setData(d);
+  };
+
+  const navBtn = (v: View) =>
+    `block w-full rounded-md px-3 py-1.5 text-left text-sm font-medium ${view === v ? "bg-indigo-600 text-white" : "hover:bg-slate-100"}`;
 
   return (
     <div className="flex min-h-screen bg-slate-50 text-slate-900">
-      {/* Sidebar: Volume → Topic → Learning Module (đúng thứ tự sách) */}
       <aside className="w-72 shrink-0 overflow-y-auto border-r border-slate-200 bg-white">
         <div className="border-b border-slate-200 px-4 py-3">
           <div className="text-xs font-medium uppercase tracking-wide text-indigo-600">Volume</div>
           <div className="text-sm font-bold">{volume.name}</div>
         </div>
+
+        {/* Điều hướng chế độ */}
+        <div className="space-y-1 border-b border-slate-200 p-2">
+          <button className={navBtn("dashboard")} onClick={() => setView("dashboard")}>📊 Dashboard</button>
+          <button className={navBtn("flashcards")} onClick={() => setView("flashcards")}>🗂️ Flashcards</button>
+        </div>
+
         {volume.topics.map((topic) => (
           <div key={topic.id} className="px-2 py-2">
-            <div className="px-2 py-1 text-xs font-semibold uppercase tracking-wide text-slate-500">
-              {topic.name}
-            </div>
+            <div className="px-2 py-1 text-xs font-semibold uppercase tracking-wide text-slate-500">{topic.name}</div>
             <ul>
               {topic.modules.map((m) => {
-                const isActive = selected?.topic === topic.id && selected?.module === m.id;
+                const isActive = view === "study" && selected.topic === topic.id && selected.module === m.id;
                 return (
                   <li key={m.id}>
                     <button
-                      onClick={() => setSelected({ topic: topic.id, module: m.id })}
+                      onClick={() => {
+                        setSelected({ topic: topic.id, module: m.id });
+                        setView("study");
+                      }}
                       className={`flex w-full items-start gap-2 rounded-md px-2 py-1.5 text-left text-sm ${
                         isActive ? "bg-indigo-50 text-indigo-700" : "hover:bg-slate-100"
                       }`}
@@ -49,9 +107,7 @@ export default function App() {
                       <span className="mt-0.5 w-5 shrink-0 text-right text-xs text-slate-400">{m.id}</span>
                       <span className="flex-1">
                         {m.title}
-                        {m.status === "planned" && (
-                          <span className="ml-1 text-[10px] text-slate-400">(sắp có)</span>
-                        )}
+                        {m.status === "planned" && <span className="ml-1 text-[10px] text-slate-400">(sắp có)</span>}
                       </span>
                     </button>
                   </li>
@@ -62,12 +118,15 @@ export default function App() {
         ))}
       </aside>
 
-      {/* Main */}
       <main className="flex-1 overflow-y-auto px-8 py-6">
-        {activeModule ? (
+        {view === "dashboard" ? (
+          <Dashboard data={data} now={now} onImport={replaceData} />
+        ) : view === "flashcards" ? (
+          <Flashcards data={data} now={now} onReview={(card: SrsCard) => update((d) => upsertCard(d, card))} />
+        ) : activeModule && activeTopic ? (
           <>
             <div className="mb-1 text-xs font-medium uppercase tracking-wide text-slate-400">
-              {volume.name} · {activeTopic?.name}
+              {volume.name} · {activeTopic.name}
             </div>
             <h1 className="text-2xl font-bold">
               Learning Module {activeModule.id}: {activeModule.title}
@@ -78,12 +137,9 @@ export default function App() {
               </div>
             )}
 
-            {/* Section map đúng heading sách */}
             {activeModule.sections.length > 0 && (
               <div className="mt-4 rounded-lg border border-slate-200 bg-white p-4">
-                <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                  Mục lục theo sách
-                </div>
+                <div className="text-xs font-semibold uppercase tracking-wide text-slate-500">Mục lục theo sách</div>
                 <ol className="mt-1 list-inside list-decimal text-sm text-slate-700">
                   {activeModule.sections.map((s) => (
                     <li key={s.id}>{s.title}</li>
@@ -93,34 +149,20 @@ export default function App() {
             )}
 
             <div className="mt-6">
-              {activeTopic?.id === "quant" && activeModule.id === 1 ? (
-                <ReturnAnalyzer sections={activeModule.sections} />
-              ) : activeTopic?.id === "quant" && activeModule.id === 2 ? (
-                <ValuationWorkbench sections={activeModule.sections} />
-              ) : activeTopic?.id === "quant" && activeModule.id === 3 ? (
-                <DistributionLab sections={activeModule.sections} />
-              ) : activeTopic?.id === "quant" && activeModule.id === 4 ? (
-                <DecisionTree sections={activeModule.sections} />
-              ) : activeTopic?.id === "quant" && activeModule.id === 5 ? (
-                <PortfolioRiskBuilder sections={activeModule.sections} />
-              ) : activeTopic?.id === "quant" && activeModule.id === 6 ? (
-                <MonteCarloSimulator sections={activeModule.sections} />
-              ) : activeTopic?.id === "quant" && activeModule.id === 7 ? (
-                <SamplingStudio sections={activeModule.sections} />
-              ) : activeTopic?.id === "quant" && activeModule.id === 8 ? (
-                <HypothesisTestRunner sections={activeModule.sections} />
-              ) : activeTopic?.id === "quant" && activeModule.id === 9 ? (
-                <IndependenceTester sections={activeModule.sections} />
-              ) : activeTopic?.id === "quant" && activeModule.id === 10 ? (
-                <RegressionWorkbench sections={activeModule.sections} />
-              ) : activeTopic?.id === "quant" && activeModule.id === 11 ? (
-                <BigDataLab sections={activeModule.sections} />
+              {activeModule.status === "available" ? (
+                <ModuleApp topicId={activeTopic.id} module={activeModule} />
               ) : (
-                <div className="rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center text-slate-500">
-                  Ứng dụng cho module này sẽ được dựng theo đúng thứ tự tài liệu.
-                </div>
+                <Placeholder />
               )}
             </div>
+
+            <ProgressNotes
+              topicId={activeTopic.id}
+              module={activeModule}
+              data={data}
+              onToggle={(key, done) => update((d) => setProgress(d, key, done))}
+              onNote={(key, text) => update((d) => setNote(d, key, text))}
+            />
           </>
         ) : (
           <p className="text-slate-500">Chọn một Learning Module ở menu bên trái.</p>

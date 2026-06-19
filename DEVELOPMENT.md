@@ -51,7 +51,8 @@ npm run build      # tsc -b + vite build
 ## Mô hình dữ liệu / nội dung
 - `data/curriculum.ts`: `Volume → Topic → Module → Section`. Section ghi đúng heading sách.
 - Engine return (LM1): xem `lib/quant/returns.ts`.
-- Lưu tiến độ/ghi chú/SRS bằng IndexedDB: **Chưa có** (sẽ làm ở P4).
+- Lưu tiến độ/ghi chú/SRS: `lib/store.ts` (`AppData` có `schemaVersion`; reducers immutable; serialize/deserialize có migration; export/import). Persistence dùng **localStorage** (đồng bộ, đủ cho 1 thiết bị) — chọn thay IndexedDB cho đơn giản; có abstraction store để đổi sau.
+- SRS: `lib/srs.ts` (SM-2). Thống kê tiến độ: `lib/progress.ts`. Flashcard deck: `data/flashcards.ts`. UI khung học: `features/` (ProgressNotes, Dashboard, Flashcards).
 
 ## Quyết định kỹ thuật quan trọng
 - **Nguồn nội dung = 2024 L1V1.pdf** (11 Learning Module thi thật), không dùng prerequisite làm xương sống. (Xem PLAN.md mục 0.)
