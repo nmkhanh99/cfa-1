@@ -1,0 +1,80 @@
+/**
+ * Cấu trúc đúng theo sách CFA. Hiện đang dựng Volume L1V1 (tách menu riêng).
+ * Thứ tự Topic / Learning Module / Section bám đúng mục lục 2024 L1V1.pdf.
+ */
+
+export interface Section {
+  id: string;
+  /** Tiêu đề đúng nguyên văn theo sách */
+  title: string;
+}
+
+export interface Module {
+  id: number;
+  title: string; // đúng tên Learning Module trong sách
+  app?: string; // ứng dụng thực tế tương ứng
+  status: "available" | "planned";
+  sections: Section[];
+}
+
+export interface Topic {
+  id: string;
+  name: string;
+  modules: Module[];
+}
+
+export interface Volume {
+  id: string;
+  name: string;
+  topics: Topic[];
+}
+
+/** LM1 — Rates and Returns: section đúng heading sách. */
+const LM1_SECTIONS: Section[] = [
+  { id: "interest-rates", title: "Interest Rates and Time Value of Money" },
+  { id: "rates-of-return", title: "Rates of Return" },
+  { id: "mwr-twr", title: "Money-Weighted and Time-Weighted Return" },
+  { id: "annualized", title: "Annualized Return" },
+  { id: "other-measures", title: "Other Major Return Measures and Their Applications" },
+];
+
+const QUANT: Topic = {
+  id: "quant",
+  name: "Quantitative Methods",
+  modules: [
+    { id: 1, title: "Rates and Returns", app: "Portfolio Return Analyzer", status: "available", sections: LM1_SECTIONS },
+    { id: 2, title: "The Time Value of Money in Finance", app: "Valuation & No-Arbitrage Workbench", status: "planned", sections: [] },
+    { id: 3, title: "Statistical Measures of Asset Returns", app: "Return Distribution Lab", status: "planned", sections: [] },
+    { id: 4, title: "Probability Trees and Conditional Expectations in Investment Applications", app: "Scenario & Bayes Decision Tree", status: "planned", sections: [] },
+    { id: 5, title: "Portfolio Mathematics", app: "Portfolio Risk Builder", status: "planned", sections: [] },
+    { id: 6, title: "Simulation Methods", app: "Monte Carlo & Bootstrap Simulator", status: "planned", sections: [] },
+    { id: 7, title: "Estimation and Inference", app: "Sampling & Confidence Interval Studio", status: "planned", sections: [] },
+    { id: 8, title: "Hypothesis Testing for Finance", app: "Hypothesis Test Runner", status: "planned", sections: [] },
+    { id: 9, title: "Parametric and Non-Parametric Tests of Independence", app: "Independence Tester", status: "planned", sections: [] },
+    { id: 10, title: "Simple Linear Regression", app: "Regression Workbench", status: "planned", sections: [] },
+    { id: 11, title: "Introduction to Big Data Techniques", app: "Fintech / Big Data Concepts", status: "planned", sections: [] },
+  ],
+};
+
+const ECONOMICS: Topic = {
+  id: "economics",
+  name: "Economics",
+  modules: [
+    { id: 1, title: "Firms and Market Structures", status: "planned", sections: [] },
+    { id: 2, title: "Business Cycles", status: "planned", sections: [] },
+    { id: 3, title: "Fiscal Policy", status: "planned", sections: [] },
+    { id: 4, title: "Monetary Policy", status: "planned", sections: [] },
+    { id: 5, title: "Introduction to Geopolitics", status: "planned", sections: [] },
+    { id: 6, title: "International Trade", status: "planned", sections: [] },
+    { id: 7, title: "The Foreign Exchange Market and Capital Flows", status: "planned", sections: [] },
+    { id: 8, title: "Exchange Rate Calculations", status: "planned", sections: [] },
+  ],
+};
+
+export const L1V1: Volume = {
+  id: "L1V1",
+  name: "2024 CFA Level I — Volume 1 (L1V1)",
+  topics: [QUANT, ECONOMICS],
+};
+
+export const VOLUMES: Volume[] = [L1V1];
