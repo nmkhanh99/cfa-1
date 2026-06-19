@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 2026-06-20 (n) — P11: LM11 Introduction to Big Data Techniques (hoàn tất Quant)
+
+### Added
+- Engine `lib/quant/bigdata.ts`: min-max normalize, z-score standardize (data processing); tokenize, word frequencies, sentiment score (text analytics/NLP); k-means clustering có seed (unsupervised ML) — 11 test theo đầu ra tất định.
+- Ứng dụng **Big Data Lab** (LM11): k-means clustering, feature scaling, text analytics & NLP. (LM11 là module khái niệm — demo thuật toán chuẩn minh hoạ, không phải ví dụ số trong sách.)
+- Section LM11 trong `curriculum.ts` (đúng mục lục); bật LM11 sang "available".
+
+### Technical
+- **Hoàn tất toàn bộ 11 Learning Module của Quantitative Methods (LM1–LM11).** Tổng 186 test pass.
+
 ## 2026-06-20 (m) — P10: LM10 Simple Linear Regression
 
 ### Added

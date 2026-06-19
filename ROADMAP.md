@@ -13,7 +13,9 @@ Theo PLAN.md (v2) — application-first, đúng thứ tự sách, làm Quant (L1
 - P7 — Slice 7: **Sampling & Confidence Interval Studio (LM7 — Estimation and Inference)**: engine `inference.ts` + UI + 9 test.
 - P8 — Slice 8: **Hypothesis Test Runner (LM8 — Hypothesis Testing for Finance)**: engine `hypothesis.ts` + UI + 15 test.
 - P9 — Slice 9: **Independence Tester (LM9 — Parametric and Non-Parametric Tests of Independence)**: engine `independence.ts` + UI + 13 test.
-- P10 — Slice 10: **Regression Workbench (LM10 — Simple Linear Regression)**: engine `regression.ts` + UI + 16 test (tổng 175 test pass).
+- P10 — Slice 10: **Regression Workbench (LM10 — Simple Linear Regression)**: engine `regression.ts` + UI + 18 test.
+- P11 — Slice 11: **Big Data Lab (LM11 — Introduction to Big Data Techniques)**: engine `bigdata.ts` + UI + 11 test (k-means, feature scaling, NLP).
+- ✅ **HOÀN TẤT toàn bộ 11 Learning Module của Quantitative Methods (LM1–LM11). Tổng 186 test pass.**
 - Menu điều hướng theo cấu trúc sách (Volume L1V1 → Topic → Module → Section).
 - Tuân thủ rule Curriculum-Ordered Development: section render theo `curriculum.ts`, thêm tool section "Interest Rates", thêm nhóm Prerequisite trong L1V1.
 - 4 tài liệu dự án khởi tạo.
@@ -22,15 +24,14 @@ Theo PLAN.md (v2) — application-first, đúng thứ tự sách, làm Quant (L1
 - (trống)
 
 ## Next
-- P11 — Slice 11: **Fintech / Big Data Concepts (LM11 — Introduction to Big Data Techniques)**: mô tả fintech, AI/ML, Big Data (nhẹ tính toán). Đọc lại mục lục LM11 trong PDF rồi khai báo section vào `curriculum.ts`. Đây là module cuối của Quant.
+- Khung học chung: tiến độ theo LOS, flashcard SRS (SM-2), dashboard, export/import JSON có version (IndexedDB).
+- Pipeline bóc nội dung reader/quiz từ PDF (hỗ trợ, làm dần theo từng module).
 
 ## Later
-- Khung học chung: tiến độ theo LOS, flashcard SRS (SM-2), dashboard, export/import JSON có version (IndexedDB).
-- P5–P11 — Các slice LM5–LM11.
-- Pipeline bóc nội dung reader/quiz từ PDF (hỗ trợ, làm dần theo slice).
-- Mở rộng sang các Volume/Topic khác (Economics, FSA, ...).
+- Mở rộng sang các Topic/Volume khác (Economics ở L1V1; rồi FSA, Equity, Fixed Income, ...).
+- Thi thử / mock exam.
 
 ## Technical Debt
 - `npm audit` còn vulnerability ở devDependency — rà soát sau.
-- Chưa có test cho lớp UI (mới test engine).
-- Engine đã phủ LM1–LM3 (`returns.ts`, `tvm.ts`, `stats.ts`); cần thêm cho các module sau.
+- Chưa có test cho lớp UI (mới test engine; 186 test cho `lib/quant/*`).
+- Engine đã phủ toàn bộ LM1–LM11 của Quant.

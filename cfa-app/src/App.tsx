@@ -10,6 +10,7 @@ import SamplingStudio from "./apps/SamplingStudio";
 import HypothesisTestRunner from "./apps/HypothesisTestRunner";
 import IndependenceTester from "./apps/IndependenceTester";
 import RegressionWorkbench from "./apps/RegressionWorkbench";
+import BigDataLab from "./apps/BigDataLab";
 
 export default function App() {
   const volume = VOLUMES[0]; // đang dựng L1V1 — menu tách riêng
@@ -112,6 +113,8 @@ export default function App() {
                 <IndependenceTester sections={activeModule.sections} />
               ) : activeTopic?.id === "quant" && activeModule.id === 10 ? (
                 <RegressionWorkbench sections={activeModule.sections} />
+              ) : activeTopic?.id === "quant" && activeModule.id === 11 ? (
+                <BigDataLab sections={activeModule.sections} />
               ) : (
                 <div className="rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center text-slate-500">
                   Ứng dụng cho module này sẽ được dựng theo đúng thứ tự tài liệu.

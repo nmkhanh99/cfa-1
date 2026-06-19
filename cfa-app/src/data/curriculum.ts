@@ -112,6 +112,14 @@ const LM10_SECTIONS: Section[] = [
   { id: "functional-forms", title: "Functional Forms for Simple Linear Regression" },
 ];
 
+/** LM11 — Introduction to Big Data Techniques: section đúng heading & thứ tự sách. */
+const LM11_SECTIONS: Section[] = [
+  { id: "intro", title: "Introduction" },
+  { id: "fintech", title: "How Is Fintech used in Quantitative Investment Analysis?" },
+  { id: "ai-ml", title: "Advanced Analytical Tools: Artificial Intelligence and Machine Learning" },
+  { id: "data-science", title: "Tackling Big Data with Data Science" },
+];
+
 const QUANT: Topic = {
   id: "quant",
   name: "Quantitative Methods",
@@ -126,7 +134,7 @@ const QUANT: Topic = {
     { id: 8, title: "Hypothesis Testing for Finance", app: "Hypothesis Test Runner", status: "available", sections: LM8_SECTIONS },
     { id: 9, title: "Parametric and Non-Parametric Tests of Independence", app: "Independence Tester", status: "available", sections: LM9_SECTIONS },
     { id: 10, title: "Simple Linear Regression", app: "Regression Workbench", status: "available", sections: LM10_SECTIONS },
-    { id: 11, title: "Introduction to Big Data Techniques", app: "Fintech / Big Data Concepts", status: "planned", sections: [] },
+    { id: 11, title: "Introduction to Big Data Techniques", app: "Fintech / Big Data Concepts", status: "available", sections: LM11_SECTIONS },
   ],
 };
 

@@ -81,6 +81,12 @@ Hồi quy tuyến tính đơn, nhóm đúng mục sách:
 - **Functional Forms:** log-lin / lin-log / log-log, so R² để chọn dạng.
 - (*Assumptions* là phần lý thuyết — xem trong sách.)
 
+## Big Data Lab (LM11)
+Big Data / AI-ML / NLP (module khái niệm — demo thuật toán minh hoạ):
+- **Artificial Intelligence and Machine Learning:** k-means clustering (học không giám sát).
+- **Tackling Big Data with Data Science:** feature scaling (min-max, z-score); text analytics & NLP (tần suất từ, điểm cảm xúc).
+- (*Fintech / Big Data* là phần lý thuyết — xem trong sách.)
+
 ## Giải thích nhanh thuật ngữ
 - **HPR:** lợi suất nắm giữ một kỳ = (giá cuối − giá đầu + thu nhập)/giá đầu.
 - **Arithmetic vs Geometric mean:** trung bình cộng dùng cho ước tính 1 kỳ; trung bình nhân phản ánh tăng trưởng kép nhiều kỳ.
