@@ -56,6 +56,14 @@ const LM3_SECTIONS: Section[] = [
   { id: "correlation", title: "Correlation between Two Variables" },
 ];
 
+/** LM4 — Probability Trees and Conditional Expectations: section đúng heading & thứ tự sách. */
+const LM4_SECTIONS: Section[] = [
+  { id: "intro", title: "Introduction" },
+  { id: "ev-variance", title: "Expected Value and Variance" },
+  { id: "prob-trees", title: "Probability Trees and Conditional Expectations" },
+  { id: "bayes", title: "Bayes' Formula and Updating Probability Estimates" },
+];
+
 const QUANT: Topic = {
   id: "quant",
   name: "Quantitative Methods",
@@ -63,7 +71,7 @@ const QUANT: Topic = {
     { id: 1, title: "Rates and Returns", app: "Portfolio Return Analyzer", status: "available", sections: LM1_SECTIONS },
     { id: 2, title: "The Time Value of Money in Finance", app: "Valuation & No-Arbitrage Workbench", status: "available", sections: LM2_SECTIONS },
     { id: 3, title: "Statistical Measures of Asset Returns", app: "Return Distribution Lab", status: "available", sections: LM3_SECTIONS },
-    { id: 4, title: "Probability Trees and Conditional Expectations in Investment Applications", app: "Scenario & Bayes Decision Tree", status: "planned", sections: [] },
+    { id: 4, title: "Probability Trees and Conditional Expectations in Investment Applications", app: "Scenario & Bayes Decision Tree", status: "available", sections: LM4_SECTIONS },
     { id: 5, title: "Portfolio Mathematics", app: "Portfolio Risk Builder", status: "planned", sections: [] },
     { id: 6, title: "Simulation Methods", app: "Monte Carlo & Bootstrap Simulator", status: "planned", sections: [] },
     { id: 7, title: "Estimation and Inference", app: "Sampling & Confidence Interval Studio", status: "planned", sections: [] },

@@ -3,6 +3,7 @@ import { VOLUMES, type Module } from "./data/curriculum";
 import ReturnAnalyzer from "./apps/ReturnAnalyzer";
 import ValuationWorkbench from "./apps/ValuationWorkbench";
 import DistributionLab from "./apps/DistributionLab";
+import DecisionTree from "./apps/DecisionTree";
 
 export default function App() {
   const volume = VOLUMES[0]; // đang dựng L1V1 — menu tách riêng
@@ -91,6 +92,8 @@ export default function App() {
                 <ValuationWorkbench sections={activeModule.sections} />
               ) : activeTopic?.id === "quant" && activeModule.id === 3 ? (
                 <DistributionLab sections={activeModule.sections} />
+              ) : activeTopic?.id === "quant" && activeModule.id === 4 ? (
+                <DecisionTree sections={activeModule.sections} />
               ) : (
                 <div className="rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center text-slate-500">
                   Ứng dụng cho module này sẽ được dựng theo đúng thứ tự tài liệu.

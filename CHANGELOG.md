@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-06-20 (g) — P4: LM4 Probability Trees and Conditional Expectations
+
+### Added
+- Engine `lib/quant/probability.ts`: expected value, variance, std (rời rạc), total probability rule for expected value, Bayes unconditional & posteriors — 14 test đối chiếu Example LM4 (BankCorp, bond recovery, tech firm, DriveMed).
+- Ứng dụng **Scenario & Bayes Decision Tree** (LM4), công cụ nhóm theo đúng heading sách + đầy đủ ghi chú/hướng dẫn/trỏ mục.
+- Section LM4 trong `curriculum.ts` (đúng mục lục); bật LM4 sang "available".
+
 ## 2026-06-20 (f) — P3: LM3 Statistical Measures of Asset Returns
 
 ### Added

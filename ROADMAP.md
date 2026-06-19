@@ -6,7 +6,8 @@ Theo PLAN.md (v2) — application-first, đúng thứ tự sách, làm Quant (L1
 - P0 — Scaffold app + engine test harness (Vite/React/TS/Tailwind/Vitest).
 - P1 — Slice 1: **Portfolio Return Analyzer (LM1 — Rates and Returns)**: engine + UI + 34 test đối chiếu sách.
 - P2 — Slice 2: **Valuation & No-Arbitrage Workbench (LM2 — The Time Value of Money in Finance)**: engine `tvm.ts` + UI + 26 test; tách `components/ToolKit.tsx` dùng chung.
-- P3 — Slice 3: **Return Distribution Lab (LM3 — Statistical Measures of Asset Returns)**: engine `stats.ts` + UI + 20 test (tổng 80 test pass).
+- P3 — Slice 3: **Return Distribution Lab (LM3 — Statistical Measures of Asset Returns)**: engine `stats.ts` + UI + 20 test.
+- P4 — Slice 4: **Scenario & Bayes Decision Tree (LM4 — Probability Trees and Conditional Expectations)**: engine `probability.ts` + UI + 14 test (tổng 94 test pass).
 - Menu điều hướng theo cấu trúc sách (Volume L1V1 → Topic → Module → Section).
 - Tuân thủ rule Curriculum-Ordered Development: section render theo `curriculum.ts`, thêm tool section "Interest Rates", thêm nhóm Prerequisite trong L1V1.
 - 4 tài liệu dự án khởi tạo.
