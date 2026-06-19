@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-06-20 (j) — P7: LM7 Estimation and Inference
+
+### Added
+- Engine `lib/quant/inference.ts`: standard error của trung bình mẫu, variance của trung bình mẫu (σ²/n), cỡ mẫu cần cho SE mục tiêu, mô phỏng CLT (phân phối trung bình mẫu) — 8 test (Biggs n=36/576, CLT std ≈ σ/√n).
+- Ứng dụng **Sampling & Confidence Interval Studio** (LM7): standard error, required sample size, CLT simulator, empirical SE via bootstrap.
+- Section LM7 trong `curriculum.ts` (đúng mục lục); bật LM7 sang "available".
+
 ## 2026-06-20 (i) — P6: LM6 Simulation Methods
 
 ### Added

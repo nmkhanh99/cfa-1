@@ -80,6 +80,14 @@ const LM6_SECTIONS: Section[] = [
   { id: "bootstrapping", title: "Bootstrapping" },
 ];
 
+/** LM7 — Estimation and Inference: section đúng heading & thứ tự sách. */
+const LM7_SECTIONS: Section[] = [
+  { id: "intro", title: "Introduction" },
+  { id: "sampling-methods", title: "Sampling Methods" },
+  { id: "clt-inference", title: "Central Limit Theorem and Inference" },
+  { id: "bootstrapping", title: "Bootstrapping and Empirical Sampling Distributions" },
+];
+
 const QUANT: Topic = {
   id: "quant",
   name: "Quantitative Methods",
@@ -90,7 +98,7 @@ const QUANT: Topic = {
     { id: 4, title: "Probability Trees and Conditional Expectations in Investment Applications", app: "Scenario & Bayes Decision Tree", status: "available", sections: LM4_SECTIONS },
     { id: 5, title: "Portfolio Mathematics", app: "Portfolio Risk Builder", status: "available", sections: LM5_SECTIONS },
     { id: 6, title: "Simulation Methods", app: "Monte Carlo & Bootstrap Simulator", status: "available", sections: LM6_SECTIONS },
-    { id: 7, title: "Estimation and Inference", app: "Sampling & Confidence Interval Studio", status: "planned", sections: [] },
+    { id: 7, title: "Estimation and Inference", app: "Sampling & Confidence Interval Studio", status: "available", sections: LM7_SECTIONS },
     { id: 8, title: "Hypothesis Testing for Finance", app: "Hypothesis Test Runner", status: "planned", sections: [] },
     { id: 9, title: "Parametric and Non-Parametric Tests of Independence", app: "Independence Tester", status: "planned", sections: [] },
     { id: 10, title: "Simple Linear Regression", app: "Regression Workbench", status: "planned", sections: [] },

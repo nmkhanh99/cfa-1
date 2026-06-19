@@ -9,7 +9,8 @@ Theo PLAN.md (v2) — application-first, đúng thứ tự sách, làm Quant (L1
 - P3 — Slice 3: **Return Distribution Lab (LM3 — Statistical Measures of Asset Returns)**: engine `stats.ts` + UI + 20 test.
 - P4 — Slice 4: **Scenario & Bayes Decision Tree (LM4 — Probability Trees and Conditional Expectations)**: engine `probability.ts` + UI + 15 test.
 - P5 — Slice 5: **Portfolio Risk Builder (LM5 — Portfolio Mathematics)**: engine `portfolio.ts` + UI + 21 test.
-- P6 — Slice 6: **Monte Carlo & Bootstrap Simulator (LM6 — Simulation Methods)**: engine `simulation.ts` + UI + 12 test (tổng 125 test pass).
+- P6 — Slice 6: **Monte Carlo & Bootstrap Simulator (LM6 — Simulation Methods)**: engine `simulation.ts` + UI + 13 test.
+- P7 — Slice 7: **Sampling & Confidence Interval Studio (LM7 — Estimation and Inference)**: engine `inference.ts` + UI + 8 test (tổng 134 test pass).
 - Menu điều hướng theo cấu trúc sách (Volume L1V1 → Topic → Module → Section).
 - Tuân thủ rule Curriculum-Ordered Development: section render theo `curriculum.ts`, thêm tool section "Interest Rates", thêm nhóm Prerequisite trong L1V1.
 - 4 tài liệu dự án khởi tạo.
@@ -18,7 +19,7 @@ Theo PLAN.md (v2) — application-first, đúng thứ tự sách, làm Quant (L1
 - (trống)
 
 ## Next
-- P7 — Slice 7: **Sampling & Confidence Interval Studio (LM7 — Estimation and Inference)**: sampling methods, CLT, standard error, khoảng tin cậy, resampling. Đọc lại mục lục LM7 trong PDF rồi khai báo section vào `curriculum.ts`.
+- P8 — Slice 8: **Hypothesis Test Runner (LM8 — Hypothesis Testing for Finance)**: t-test 1 mẫu/2 mẫu, test phương sai, p-value, sai lầm loại I/II, power. Đọc lại mục lục LM8 trong PDF rồi khai báo section vào `curriculum.ts`.
 
 ## Later
 - Khung học chung: tiến độ theo LOS, flashcard SRS (SM-2), dashboard, export/import JSON có version (IndexedDB).

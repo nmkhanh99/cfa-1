@@ -56,6 +56,12 @@ Mô phỏng & mô hình giá, nhóm đúng mục sách:
 - **Monte Carlo Simulation:** mô phỏng giá cuối kỳ (giá TB, khoảng 5%–95%, xác suất lỗ) — có seed để tái lập.
 - **Bootstrapping:** rút lại có hoàn lại để ước lượng sai số chuẩn của trung bình.
 
+## Sampling & Confidence Interval Studio (LM7)
+Lấy mẫu & suy diễn, nhóm đúng mục sách:
+- **Central Limit Theorem and Inference:** standard error (s/√n), cỡ mẫu cần thiết, CLT simulator (std trung bình mẫu ≈ σ/√n).
+- **Bootstrapping and Empirical Sampling Distributions:** ước lượng standard error bằng bootstrap, so với công thức.
+- (*Sampling Methods* là phần lý thuyết — xem trong sách.)
+
 ## Giải thích nhanh thuật ngữ
 - **HPR:** lợi suất nắm giữ một kỳ = (giá cuối − giá đầu + thu nhập)/giá đầu.
 - **Arithmetic vs Geometric mean:** trung bình cộng dùng cho ước tính 1 kỳ; trung bình nhân phản ánh tăng trưởng kép nhiều kỳ.
