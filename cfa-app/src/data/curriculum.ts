@@ -64,6 +64,14 @@ const LM4_SECTIONS: Section[] = [
   { id: "bayes", title: "Bayes' Formula and Updating Probability Estimates" },
 ];
 
+/** LM5 — Portfolio Mathematics: section đúng heading & thứ tự sách. */
+const LM5_SECTIONS: Section[] = [
+  { id: "intro", title: "Introduction" },
+  { id: "return-variance", title: "Portfolio Expected Return and Variance of Return" },
+  { id: "joint-probability", title: "Forecasting Correlation of Returns: Covariance Given a Joint Probability Function" },
+  { id: "risk-measures", title: "Portfolio Risk Measures: Applications of the Normal Distribution" },
+];
+
 const QUANT: Topic = {
   id: "quant",
   name: "Quantitative Methods",
@@ -72,7 +80,7 @@ const QUANT: Topic = {
     { id: 2, title: "The Time Value of Money in Finance", app: "Valuation & No-Arbitrage Workbench", status: "available", sections: LM2_SECTIONS },
     { id: 3, title: "Statistical Measures of Asset Returns", app: "Return Distribution Lab", status: "available", sections: LM3_SECTIONS },
     { id: 4, title: "Probability Trees and Conditional Expectations in Investment Applications", app: "Scenario & Bayes Decision Tree", status: "available", sections: LM4_SECTIONS },
-    { id: 5, title: "Portfolio Mathematics", app: "Portfolio Risk Builder", status: "planned", sections: [] },
+    { id: 5, title: "Portfolio Mathematics", app: "Portfolio Risk Builder", status: "available", sections: LM5_SECTIONS },
     { id: 6, title: "Simulation Methods", app: "Monte Carlo & Bootstrap Simulator", status: "planned", sections: [] },
     { id: 7, title: "Estimation and Inference", app: "Sampling & Confidence Interval Studio", status: "planned", sections: [] },
     { id: 8, title: "Hypothesis Testing for Finance", app: "Hypothesis Test Runner", status: "planned", sections: [] },

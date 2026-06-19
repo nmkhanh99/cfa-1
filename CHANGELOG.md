@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-06-20 (h) — P5: LM5 Portfolio Mathematics
+
+### Added
+- Engine `lib/quant/portfolio.ts`: portfolio expected return, variance/std từ ma trận hiệp phương sai, two-asset risk, cov↔corr, covariance từ joint probability, safety-first ratio, normal CDF, shortfall probability — 18 test đối chiếu Example LM5.
+- Ứng dụng **Portfolio Risk Builder** (LM5), công cụ nhóm theo đúng heading sách + đầy đủ ghi chú/hướng dẫn/trỏ mục.
+- Section LM5 trong `curriculum.ts` (đúng mục lục); bật LM5 sang "available".
+
 ## 2026-06-20 (g) — P4: LM4 Probability Trees and Conditional Expectations
 
 ### Added

@@ -44,6 +44,12 @@ Phân tích phân phối lợi suất, nhóm đúng mục sách:
 - **Measures of Shape of a Distribution:** skewness, excess kurtosis.
 - **Correlation between Two Variables:** covariance, correlation (2 chuỗi X, Y).
 
+## Portfolio Risk Builder (LM5)
+Lợi suất & rủi ro danh mục, nhóm đúng mục sách:
+- **Portfolio Expected Return and Variance of Return:** E(Rp), rủi ro 2 tài sản, đổi covariance↔correlation.
+- **Covariance Given a Joint Probability Function:** covariance từ hàm xác suất đồng thời.
+- **Portfolio Risk Measures (Normal Distribution):** safety-first ratio (Roy), xác suất shortfall.
+
 ## Giải thích nhanh thuật ngữ
 - **HPR:** lợi suất nắm giữ một kỳ = (giá cuối − giá đầu + thu nhập)/giá đầu.
 - **Arithmetic vs Geometric mean:** trung bình cộng dùng cho ước tính 1 kỳ; trung bình nhân phản ánh tăng trưởng kép nhiều kỳ.
