@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 2026-06-20 (e) — P2: LM2 The Time Value of Money in Finance
+
+### Added
+- Engine `lib/quant/tvm.ts`: PV discount/coupon bond, perpetuity, annuity payment, implied return (FI), constant/Gordon/two-stage DDM, implied return & growth (equity), PV cash flow stream, implied forward rate, forward FX (no-arbitrage), binomial call/put — 26 test đối chiếu Example LM2.
+- Ứng dụng **Valuation & No-Arbitrage Workbench** (LM2), công cụ nhóm theo đúng heading sách + đầy đủ ghi chú/hướng dẫn/trỏ mục (rule in-app-guidance).
+- Section LM2 trong `curriculum.ts` (đúng mục lục); bật LM2 sang "available".
+
+### Changed
+- Tách UI guidance dùng chung ra `components/ToolKit.tsx`; `ReturnAnalyzer` dùng lại để trình bày nhất quán.
+
 ## 2026-06-20 (d) — Nâng LM1 theo rule in-app-guidance
 
 ### Added

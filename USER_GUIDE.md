@@ -31,6 +31,12 @@ Cách dùng: nhập số vào ô (chuỗi return cách nhau bởi dấu phẩy),
 - **📖 Trỏ mục sách:** vị trí trong sách (Volume · Module · Section · Example) để tra cứu sâu hơn.
 - Số nhập ở dạng thập phân (0.15 = 15%). Ô điền sẵn là ví dụ lấy từ sách để đối chiếu đáp án.
 
+## Valuation & No-Arbitrage Workbench (LM2)
+Định giá theo giá trị thời gian của tiền, nhóm đúng mục sách:
+- **Time Value of Money in Fixed Income and Equity:** PV trái phiếu chiết khấu/coupon, perpetuity, khoản trả góp (mortgage), Gordon growth & two-stage DDM.
+- **Implied Return and Growth:** suy lợi suất ẩn của trái phiếu; required return & implied growth của cổ phiếu.
+- **Cash Flow Additivity:** PV chuỗi dòng tiền, implied forward rate, forward FX (no-arbitrage), định giá option nhị thức 1 kỳ (call/put).
+
 ## Giải thích nhanh thuật ngữ
 - **HPR:** lợi suất nắm giữ một kỳ = (giá cuối − giá đầu + thu nhập)/giá đầu.
 - **Arithmetic vs Geometric mean:** trung bình cộng dùng cho ước tính 1 kỳ; trung bình nhân phản ánh tăng trưởng kép nhiều kỳ.

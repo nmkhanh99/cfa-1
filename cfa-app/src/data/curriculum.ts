@@ -39,12 +39,20 @@ const LM1_SECTIONS: Section[] = [
   { id: "other-measures", title: "Other Major Return Measures and Their Applications" },
 ];
 
+/** LM2 — The Time Value of Money in Finance: section đúng heading & thứ tự sách. */
+const LM2_SECTIONS: Section[] = [
+  { id: "intro", title: "Introduction" },
+  { id: "tvm-fi-equity", title: "Time Value of Money in Fixed Income and Equity" },
+  { id: "implied-return-growth", title: "Implied Return and Growth" },
+  { id: "cash-flow-additivity", title: "Cash Flow Additivity" },
+];
+
 const QUANT: Topic = {
   id: "quant",
   name: "Quantitative Methods",
   modules: [
     { id: 1, title: "Rates and Returns", app: "Portfolio Return Analyzer", status: "available", sections: LM1_SECTIONS },
-    { id: 2, title: "The Time Value of Money in Finance", app: "Valuation & No-Arbitrage Workbench", status: "planned", sections: [] },
+    { id: 2, title: "The Time Value of Money in Finance", app: "Valuation & No-Arbitrage Workbench", status: "available", sections: LM2_SECTIONS },
     { id: 3, title: "Statistical Measures of Asset Returns", app: "Return Distribution Lab", status: "planned", sections: [] },
     { id: 4, title: "Probability Trees and Conditional Expectations in Investment Applications", app: "Scenario & Bayes Decision Tree", status: "planned", sections: [] },
     { id: 5, title: "Portfolio Mathematics", app: "Portfolio Risk Builder", status: "planned", sections: [] },
