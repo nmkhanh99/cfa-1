@@ -73,6 +73,14 @@ Kiểm định độc lập, nhóm đúng mục sách:
 - **Tests Concerning Correlation:** parametric correlation t-test; Spearman rank correlation (phi tham số) + t-test.
 - **Tests of Independence Using Contingency Table Data:** chi-square test độc lập cho dữ liệu phân loại.
 
+## Regression Workbench (LM10)
+Hồi quy tuyến tính đơn, nhóm đúng mục sách:
+- **Estimation:** OLS slope/intercept, phương trình hồi quy.
+- **Hypothesis Tests:** ANOVA (SST/SSR/SSE), R², SEE, F; kiểm định slope (t-stat).
+- **Prediction:** dự báo Ŷf + khoảng dự báo (standard error of forecast).
+- **Functional Forms:** log-lin / lin-log / log-log, so R² để chọn dạng.
+- (*Assumptions* là phần lý thuyết — xem trong sách.)
+
 ## Giải thích nhanh thuật ngữ
 - **HPR:** lợi suất nắm giữ một kỳ = (giá cuối − giá đầu + thu nhập)/giá đầu.
 - **Arithmetic vs Geometric mean:** trung bình cộng dùng cho ước tính 1 kỳ; trung bình nhân phản ánh tăng trưởng kép nhiều kỳ.

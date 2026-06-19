@@ -102,6 +102,16 @@ const LM9_SECTIONS: Section[] = [
   { id: "contingency", title: "Tests of Independence Using Contingency Table Data" },
 ];
 
+/** LM10 — Simple Linear Regression: section đúng heading & thứ tự sách. */
+const LM10_SECTIONS: Section[] = [
+  { id: "intro", title: "Introduction" },
+  { id: "estimation", title: "Estimation of the Simple Linear Regression Model" },
+  { id: "assumptions", title: "Assumptions of the Simple Linear Regression Model" },
+  { id: "hypothesis-tests", title: "Hypothesis Tests in the Simple Linear Regression Model" },
+  { id: "prediction", title: "Prediction in the Simple Linear Regression Model" },
+  { id: "functional-forms", title: "Functional Forms for Simple Linear Regression" },
+];
+
 const QUANT: Topic = {
   id: "quant",
   name: "Quantitative Methods",
@@ -115,7 +125,7 @@ const QUANT: Topic = {
     { id: 7, title: "Estimation and Inference", app: "Sampling & Confidence Interval Studio", status: "available", sections: LM7_SECTIONS },
     { id: 8, title: "Hypothesis Testing for Finance", app: "Hypothesis Test Runner", status: "available", sections: LM8_SECTIONS },
     { id: 9, title: "Parametric and Non-Parametric Tests of Independence", app: "Independence Tester", status: "available", sections: LM9_SECTIONS },
-    { id: 10, title: "Simple Linear Regression", app: "Regression Workbench", status: "planned", sections: [] },
+    { id: 10, title: "Simple Linear Regression", app: "Regression Workbench", status: "available", sections: LM10_SECTIONS },
     { id: 11, title: "Introduction to Big Data Techniques", app: "Fintech / Big Data Concepts", status: "planned", sections: [] },
   ],
 };

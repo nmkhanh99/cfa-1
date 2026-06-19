@@ -12,7 +12,8 @@ Theo PLAN.md (v2) — application-first, đúng thứ tự sách, làm Quant (L1
 - P6 — Slice 6: **Monte Carlo & Bootstrap Simulator (LM6 — Simulation Methods)**: engine `simulation.ts` + UI + 13 test.
 - P7 — Slice 7: **Sampling & Confidence Interval Studio (LM7 — Estimation and Inference)**: engine `inference.ts` + UI + 9 test.
 - P8 — Slice 8: **Hypothesis Test Runner (LM8 — Hypothesis Testing for Finance)**: engine `hypothesis.ts` + UI + 15 test.
-- P9 — Slice 9: **Independence Tester (LM9 — Parametric and Non-Parametric Tests of Independence)**: engine `independence.ts` + UI + 12 test (tổng 158 test pass).
+- P9 — Slice 9: **Independence Tester (LM9 — Parametric and Non-Parametric Tests of Independence)**: engine `independence.ts` + UI + 13 test.
+- P10 — Slice 10: **Regression Workbench (LM10 — Simple Linear Regression)**: engine `regression.ts` + UI + 16 test (tổng 175 test pass).
 - Menu điều hướng theo cấu trúc sách (Volume L1V1 → Topic → Module → Section).
 - Tuân thủ rule Curriculum-Ordered Development: section render theo `curriculum.ts`, thêm tool section "Interest Rates", thêm nhóm Prerequisite trong L1V1.
 - 4 tài liệu dự án khởi tạo.
@@ -21,7 +22,7 @@ Theo PLAN.md (v2) — application-first, đúng thứ tự sách, làm Quant (L1
 - (trống)
 
 ## Next
-- P10 — Slice 10: **Regression Workbench (LM10 — Simple Linear Regression)**: OLS, ANOVA, SEE, kiểm định fit & hệ số, prediction interval. Đọc lại mục lục LM10 trong PDF rồi khai báo section vào `curriculum.ts`.
+- P11 — Slice 11: **Fintech / Big Data Concepts (LM11 — Introduction to Big Data Techniques)**: mô tả fintech, AI/ML, Big Data (nhẹ tính toán). Đọc lại mục lục LM11 trong PDF rồi khai báo section vào `curriculum.ts`. Đây là module cuối của Quant.
 
 ## Later
 - Khung học chung: tiến độ theo LOS, flashcard SRS (SM-2), dashboard, export/import JSON có version (IndexedDB).

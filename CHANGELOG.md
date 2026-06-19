@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-06-20 (m) — P10: LM10 Simple Linear Regression
+
+### Added
+- Engine `lib/quant/regression.ts`: OLS (slope/intercept), ANOVA (SST/SSR/SSE), R², SEE, F, standard error & t-stat của slope, prediction + prediction interval (standard error of forecast), log transform cho functional forms — 16 test đối chiếu Example ROA~CAPEX (slope 1.25, R² 0.8001, F 16.01, PI {2.0013, 22.7487}).
+- Ứng dụng **Regression Workbench** (LM10): OLS estimation, ANOVA & goodness of fit, slope test, prediction interval, functional forms (log-lin/lin-log/log-log).
+- Section LM10 trong `curriculum.ts` (đúng mục lục); bật LM10 sang "available".
+
 ## 2026-06-20 (l) — P9: LM9 Parametric and Non-Parametric Tests of Independence
 
 ### Added
