@@ -72,6 +72,14 @@ const LM5_SECTIONS: Section[] = [
   { id: "risk-measures", title: "Portfolio Risk Measures: Applications of the Normal Distribution" },
 ];
 
+/** LM6 — Simulation Methods: section đúng heading & thứ tự sách. */
+const LM6_SECTIONS: Section[] = [
+  { id: "intro", title: "Introduction" },
+  { id: "lognormal-cc", title: "Lognormal Distribution and Continuous Compounding" },
+  { id: "monte-carlo", title: "Monte Carlo Simulation" },
+  { id: "bootstrapping", title: "Bootstrapping" },
+];
+
 const QUANT: Topic = {
   id: "quant",
   name: "Quantitative Methods",
@@ -81,7 +89,7 @@ const QUANT: Topic = {
     { id: 3, title: "Statistical Measures of Asset Returns", app: "Return Distribution Lab", status: "available", sections: LM3_SECTIONS },
     { id: 4, title: "Probability Trees and Conditional Expectations in Investment Applications", app: "Scenario & Bayes Decision Tree", status: "available", sections: LM4_SECTIONS },
     { id: 5, title: "Portfolio Mathematics", app: "Portfolio Risk Builder", status: "available", sections: LM5_SECTIONS },
-    { id: 6, title: "Simulation Methods", app: "Monte Carlo & Bootstrap Simulator", status: "planned", sections: [] },
+    { id: 6, title: "Simulation Methods", app: "Monte Carlo & Bootstrap Simulator", status: "available", sections: LM6_SECTIONS },
     { id: 7, title: "Estimation and Inference", app: "Sampling & Confidence Interval Studio", status: "planned", sections: [] },
     { id: 8, title: "Hypothesis Testing for Finance", app: "Hypothesis Test Runner", status: "planned", sections: [] },
     { id: 9, title: "Parametric and Non-Parametric Tests of Independence", app: "Independence Tester", status: "planned", sections: [] },

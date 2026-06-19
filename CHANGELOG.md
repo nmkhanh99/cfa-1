@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-06-20 (i) — P6: LM6 Simulation Methods
+
+### Added
+- Engine `lib/quant/simulation.ts`: lognormal mean/variance, cc returns & annualized volatility, future price, PRNG mulberry32 + gaussian (Box–Muller), Monte Carlo giá cuối kỳ, bootstrap resample & statistic — 12 test (lognormal known values, Astra vol 33.6%, mô phỏng tái lập theo seed).
+- Ứng dụng **Monte Carlo & Bootstrap Simulator** (LM6), công cụ nhóm theo đúng heading sách + đầy đủ ghi chú/hướng dẫn/trỏ mục.
+- Section LM6 trong `curriculum.ts` (đúng mục lục); bật LM6 sang "available".
+
 ## 2026-06-20 (h) — P5: LM5 Portfolio Mathematics
 
 ### Added

@@ -5,6 +5,7 @@ import ValuationWorkbench from "./apps/ValuationWorkbench";
 import DistributionLab from "./apps/DistributionLab";
 import DecisionTree from "./apps/DecisionTree";
 import PortfolioRiskBuilder from "./apps/PortfolioRiskBuilder";
+import MonteCarloSimulator from "./apps/MonteCarloSimulator";
 
 export default function App() {
   const volume = VOLUMES[0]; // đang dựng L1V1 — menu tách riêng
@@ -97,6 +98,8 @@ export default function App() {
                 <DecisionTree sections={activeModule.sections} />
               ) : activeTopic?.id === "quant" && activeModule.id === 5 ? (
                 <PortfolioRiskBuilder sections={activeModule.sections} />
+              ) : activeTopic?.id === "quant" && activeModule.id === 6 ? (
+                <MonteCarloSimulator sections={activeModule.sections} />
               ) : (
                 <div className="rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center text-slate-500">
                   Ứng dụng cho module này sẽ được dựng theo đúng thứ tự tài liệu.

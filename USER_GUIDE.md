@@ -50,6 +50,12 @@ Lợi suất & rủi ro danh mục, nhóm đúng mục sách:
 - **Covariance Given a Joint Probability Function:** covariance từ hàm xác suất đồng thời.
 - **Portfolio Risk Measures (Normal Distribution):** safety-first ratio (Roy), xác suất shortfall.
 
+## Monte Carlo & Bootstrap Simulator (LM6)
+Mô phỏng & mô hình giá, nhóm đúng mục sách:
+- **Lognormal Distribution and Continuous Compounding:** mean/variance lognormal, volatility năm hoá từ chuỗi giá.
+- **Monte Carlo Simulation:** mô phỏng giá cuối kỳ (giá TB, khoảng 5%–95%, xác suất lỗ) — có seed để tái lập.
+- **Bootstrapping:** rút lại có hoàn lại để ước lượng sai số chuẩn của trung bình.
+
 ## Giải thích nhanh thuật ngữ
 - **HPR:** lợi suất nắm giữ một kỳ = (giá cuối − giá đầu + thu nhập)/giá đầu.
 - **Arithmetic vs Geometric mean:** trung bình cộng dùng cho ước tính 1 kỳ; trung bình nhân phản ánh tăng trưởng kép nhiều kỳ.
