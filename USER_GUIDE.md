@@ -62,6 +62,12 @@ Lấy mẫu & suy diễn, nhóm đúng mục sách:
 - **Bootstrapping and Empirical Sampling Distributions:** ước lượng standard error bằng bootstrap, so với công thức.
 - (*Sampling Methods* là phần lý thuyết — xem trong sách.)
 
+## Hypothesis Test Runner (LM8)
+Kiểm định giả thuyết, nhóm đúng mục sách:
+- **Hypothesis Tests for Finance:** quyết định theo giá trị tới hạn & p-value.
+- **Tests of Return and Risk in Finance:** t-test một trung bình, χ²-test một phương sai, t-test 2 mẫu độc lập (pooled), paired t-test, F-test 2 phương sai.
+- (*Parametric vs Nonparametric* là phần lý thuyết — xem trong sách.)
+
 ## Giải thích nhanh thuật ngữ
 - **HPR:** lợi suất nắm giữ một kỳ = (giá cuối − giá đầu + thu nhập)/giá đầu.
 - **Arithmetic vs Geometric mean:** trung bình cộng dùng cho ước tính 1 kỳ; trung bình nhân phản ánh tăng trưởng kép nhiều kỳ.

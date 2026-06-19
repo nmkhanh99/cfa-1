@@ -88,6 +88,13 @@ const LM7_SECTIONS: Section[] = [
   { id: "bootstrapping", title: "Bootstrapping and Empirical Sampling Distributions" },
 ];
 
+/** LM8 — Hypothesis Testing for Finance: section đúng heading & thứ tự sách. */
+const LM8_SECTIONS: Section[] = [
+  { id: "hypothesis-process", title: "Hypothesis Tests for Finance" },
+  { id: "tests-return-risk", title: "Tests of Return and Risk in Finance" },
+  { id: "parametric-nonparametric", title: "Parametric versus Nonparametric Tests" },
+];
+
 const QUANT: Topic = {
   id: "quant",
   name: "Quantitative Methods",
@@ -99,7 +106,7 @@ const QUANT: Topic = {
     { id: 5, title: "Portfolio Mathematics", app: "Portfolio Risk Builder", status: "available", sections: LM5_SECTIONS },
     { id: 6, title: "Simulation Methods", app: "Monte Carlo & Bootstrap Simulator", status: "available", sections: LM6_SECTIONS },
     { id: 7, title: "Estimation and Inference", app: "Sampling & Confidence Interval Studio", status: "available", sections: LM7_SECTIONS },
-    { id: 8, title: "Hypothesis Testing for Finance", app: "Hypothesis Test Runner", status: "planned", sections: [] },
+    { id: 8, title: "Hypothesis Testing for Finance", app: "Hypothesis Test Runner", status: "available", sections: LM8_SECTIONS },
     { id: 9, title: "Parametric and Non-Parametric Tests of Independence", app: "Independence Tester", status: "planned", sections: [] },
     { id: 10, title: "Simple Linear Regression", app: "Regression Workbench", status: "planned", sections: [] },
     { id: 11, title: "Introduction to Big Data Techniques", app: "Fintech / Big Data Concepts", status: "planned", sections: [] },

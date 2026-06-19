@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-06-20 (k) — P8: LM8 Hypothesis Testing for Finance
+
+### Added
+- Engine `lib/quant/hypothesis.ts`: t-test một trung bình, χ²-test một phương sai, pooled variance & t-test 2 mẫu độc lập, paired t-test, F-test 2 phương sai, quyết định 2 phía, p-value xấp xỉ chuẩn — 12 test đối chiếu Example LM8 (Sendar, ACE indexes, regulation change).
+- Ứng dụng **Hypothesis Test Runner** (LM8): test decision & p-value, single-mean t, single-variance χ², two-sample/paired t, F-test.
+- Section LM8 trong `curriculum.ts` (đúng mục lục); bật LM8 sang "available".
+
 ## 2026-06-20 (j) — P7: LM7 Estimation and Inference
 
 ### Added
