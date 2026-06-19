@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 2026-06-20 (c) — Thêm rule phát triển
+
+### Technical
+- Thêm rule `in-app-guidance` (Always On): công cụ phải có ghi chú giải thích, trỏ mục sách khi cần, và hướng dẫn các bước đầy đủ ngay trên app.
+- Thêm rule `reread-book-when-needed` (Always On): khi cần đối chiếu nội dung/công thức/thứ tự/ví dụ phải đọc lại PDF curriculum để xác minh, không suy đoán từ trí nhớ.
+
 ## 2026-06-20 (b) — Tuân thủ rule Curriculum-Ordered Development
 
 ### Added
